@@ -11,9 +11,10 @@ class CategoriesScreens extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Vamos cozinhar?'),
-        backgroundColor: Colors.red[400],
+        // backgroundColor: Colors.red[400],
       ),
       body: GridView(
+        padding: const EdgeInsets.all(25), //espaçamento nas lateráis
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 200, //tamanho de cada elemento
           childAspectRatio: 3 / 2, // 1.5//proporção de cada elemento

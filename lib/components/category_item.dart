@@ -11,7 +11,10 @@ class CategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text(category.title),
+      child: Text(
+        category.title,
+        style: Theme.of(context).textTheme.title,
+      ),
       padding: EdgeInsets.all(15), //centralizar o text. "preenchimento"
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15), // borda circular
