@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'screens/categories_screens.dart';
 
+import 'screens/categories_meals_screen.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -20,6 +22,8 @@ class MyApp extends StatelessWidget {
                 fontFamily: 'RobotoCondensed',
               ))),
       home: CategoriesScreens(),
+      //rotas
+      routes: {'/categories-meals': (ctx) => CategoriesMealsScreen()},
     );
   }
 }
