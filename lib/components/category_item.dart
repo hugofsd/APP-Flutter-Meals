@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../models/category.dart';
 
-import '../screens/categories_meals_screen.dart';
+import '../utils/app_routes.dart';
 
 class CategoryItem extends StatelessWidget {
   //referenciando o model para a variavel depois do import
@@ -12,14 +12,9 @@ class CategoryItem extends StatelessWidget {
 
 //navigator
   void _selectCategory(BuildContext context) {
-    // Navigator.of(context).push(
-    //   MaterialPageRoute(
-    //     builder: (_) {
-    //       return CategoriesMealsScreen(category);
-    //     },
-    //   ),
-    // );
-    Navigator.of(context).pushNamed('/categories-meals',
+    Navigator.of(context).pushNamed(
+        //rota
+        AppRoutes.CATEGORIES_MEALS,
         //passando os dados via arguments
         arguments: category);
   }
