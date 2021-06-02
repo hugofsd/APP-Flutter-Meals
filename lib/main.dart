@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'screens/categories_screens.dart';
 
 import 'screens/categories_meals_screen.dart';
+import 'screens/meal_detail_screens.dart';
 
 import 'utils/app_routes.dart';
 
@@ -28,7 +29,8 @@ class MyApp extends StatelessWidget {
       // initialRoute: , para rota inical é outra auternativa
       routes: {
         AppRoutes.HOME: (ctx) => CategoriesScreens(), //rota principal
-        AppRoutes.CATEGORIES_MEALS: (ctx) => CategoriesMealsScreen()
+        AppRoutes.CATEGORIES_MEALS: (ctx) => CategoriesMealsScreen(),
+        AppRoutes.MEAL_DETAIL: (ctx) => MealDetailScreen()
       },
     );
   }
