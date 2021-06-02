@@ -34,9 +34,53 @@ class MealItem extends StatelessWidget {
                       height: 250, //altura
                       width: double.infinity, //largura espaço disponivel
                       fit: BoxFit.cover),
-                ), //define as bordas para o componente
+                ),
+                Positioned(
+                  bottom: 20, // posicionamento
+                  right: 10, //posicionamento
+                  child: Container(
+                    width: 300,
+                    color: Colors.black54, // fundo com opacidade
+                    padding: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+                    child: Text(
+                      meal.title,
+                      style: TextStyle(fontSize: 20, color: Colors.white),
+                      softWrap: true, //permitir quebra de linha,
+                      overflow: TextOverflow.fade, //overflow bonitin
+                    ),
+                  ), //define as bordas para o componente
+                ) //ancoramento
               ],
-            ) //para colocar um Widget em cima do outros
+            ), //para colocar um Widget em cima do outros
+            Padding(
+                padding: EdgeInsets.all(20),
+                child: Row(
+                  mainAxisAlignment:
+                      MainAxisAlignment.spaceAround, // espaço entre as linhas
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        Icon(Icons.schedule), //icon de relogio
+                        SizedBox(width: 6),
+                        Text('${meal.duration} min '),
+                      ],
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Icon(Icons.work), //icon
+                        SizedBox(width: 6),
+                        Text(meal.complexityText), //COMPLEXIDADE
+                      ],
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Icon(Icons.attach_money), //icon
+                        SizedBox(width: 6),
+                        Text(meal.costText), //COMPLEXIDADE
+                      ],
+                    )
+                  ],
+                )) //espaço para string
           ],
         ),
       ),
