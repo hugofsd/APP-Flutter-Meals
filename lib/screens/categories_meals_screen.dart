@@ -4,6 +4,9 @@ import '../models/category.dart';
 //import dos dados
 import '../data/dummy_data.dart';
 
+//importando o componentes Ref
+import '../components/meal_item.dart';
+
 class CategoriesMealsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -22,7 +25,7 @@ class CategoriesMealsScreen extends StatelessWidget {
         body: ListView.builder(
             itemCount: categoryMeals.length, //quantidade de elementos
             itemBuilder: (ctx, index) {
-              return Text(categoryMeals[index].title);
+              return MealItem(categoryMeals[index]);
             }));
   }
 }
