@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import '../screens/categories_screens.dart';
 import '../screens/favorite_screen.dart';
 
+import '../components/main_drawer.dart';
+
 class TabsScreen extends StatefulWidget {
   @override
   _TabsScreenState createState() => _TabsScreenState();
@@ -28,6 +30,7 @@ class _TabsScreenState extends State<TabsScreen> {
       appBar: AppBar(
         title: Text('Refeições'),
       ),
+      drawer: MaindDrawer(),
       body: _screens[_selectedScreenIndex],
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Theme.of(context).accentColor,
