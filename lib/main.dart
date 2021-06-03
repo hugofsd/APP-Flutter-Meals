@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'screens/categories_screens.dart';
 
 import 'screens/categories_meals_screen.dart';
 import 'screens/meal_detail_screens.dart';
@@ -9,6 +8,7 @@ import 'screens/meal_detail_screens.dart';
 import 'utils/app_routes.dart';
 
 import 'screens/tabs_screen.dart';
+import 'screens/settings_screens.dart';
 
 void main() => runApp(MyApp());
 
@@ -32,13 +32,9 @@ class MyApp extends StatelessWidget {
       routes: {
         AppRoutes.HOME: (ctx) => TabsScreen(), //rota principal
         AppRoutes.CATEGORIES_MEALS: (ctx) => CategoriesMealsScreen(),
-        AppRoutes.MEAL_DETAIL: (ctx) => MealDetailScreen()
+        AppRoutes.MEAL_DETAIL: (ctx) => MealDetailScreen(),
+        AppRoutes.SETTINGS: (ctx) => SettingsScreen()
       },
-      //rotas dinamicas
-      // onGenerateRoute: (settings){
-      //   if (settings. == '/alguma-coisa')
-
-      // },
     );
   }
 }
