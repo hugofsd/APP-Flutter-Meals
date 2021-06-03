@@ -32,6 +32,11 @@ class MyApp extends StatelessWidget {
         AppRoutes.CATEGORIES_MEALS: (ctx) => CategoriesMealsScreen(),
         AppRoutes.MEAL_DETAIL: (ctx) => MealDetailScreen()
       },
+      //rotas dinamicas
+      // onGenerateRoute: (settings){
+      //   if (settings. == '/alguma-coisa')
+
+      // },
     );
   }
 }
