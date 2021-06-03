@@ -31,7 +31,7 @@ class MaindDrawer extends StatelessWidget {
             color: Theme.of(context).primaryColor,
             alignment: Alignment.bottomRight,
             child: Text(
-              'Vamos cozinhar?',
+              'Opções',
               style: TextStyle(
                 fontWeight: FontWeight.w900, // peso
                 fontSize: 25,
