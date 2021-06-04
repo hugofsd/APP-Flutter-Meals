@@ -3,7 +3,11 @@ import '../components/main_drawer.dart';
 import '../models/settings.dart';
 
 class SettingsScreen extends StatefulWidget {
-  //func para retornar switch
+  //func chamada quando ocorrer configuração
+  final Function(Settings) onSettingsChanged;
+
+  const SettingsScreen(this.onSettingsChanged);
+
   @override
   _SettingsScreenState createState() => _SettingsScreenState();
 }
@@ -14,14 +18,16 @@ class _SettingsScreenState extends State<SettingsScreen> {
     String title,
     String subtitle,
     bool value,
-    Function onChanged,
+    Function(bool) onChanged,
   ) {
     return SwitchListTile.adaptive(
-      title: Text(title),
-      subtitle: Text(subtitle),
-      value: value,
-      onChanged: onChanged,
-    );
+        title: Text(title),
+        subtitle: Text(subtitle),
+        value: value,
+        onChanged: (value) {
+          onChanged(value);
+          widget.onSettingsChanged(settings);
+        });
   }
 
   @override

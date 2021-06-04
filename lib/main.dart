@@ -12,6 +12,7 @@ import 'screens/settings_screens.dart';
 
 import 'models/meal.dart';
 import 'data/dummy_data.dart';
+import 'models/settings.dart';
 
 void main() => runApp(MyApp());
 
@@ -23,6 +24,21 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   // receber comidas disponiveis, recebe todas de primeira por padrão
   List<Meal> _availableMeals = DUMMY_MEALS;
+
+  //chamdo quando ocorrer configuração
+  void _filterMeals(Settings settings) {
+    _availableMeals = DUMMY_MEALS.where((meal) {
+      final filterGluten = settings.isGlutenFree && !meal.isGlutenFree;
+      final filterLactose = settings.isLactoseFree && !meal.isLactoseFree;
+      final filterVegan = settings.isVegan && !meal.isVegan;
+      final filterVegerarian = settings.isVegetarian && !meal.isVegetarian;
+
+      return !filterGluten &&
+          !filterLactose &&
+          !filterVegan &&
+          !filterVegerarian;
+    }).toList();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +61,7 @@ class _MyAppState extends State<MyApp> {
         AppRoutes.CATEGORIES_MEALS: (ctx) =>
             CategoriesMealsScreen(_availableMeals),
         AppRoutes.MEAL_DETAIL: (ctx) => MealDetailScreen(),
-        AppRoutes.SETTINGS: (ctx) => SettingsScreen()
+        AppRoutes.SETTINGS: (ctx) => SettingsScreen(_filterMeals)
       },
     );
   }
