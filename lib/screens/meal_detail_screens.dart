@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 import '../models/meal.dart';
 
 class MealDetailScreen extends StatelessWidget {
+  final Function(Meal) onToggleFavorite;
+
+  final bool Function(Meal) isFavorite;
+
+  const MealDetailScreen(this.onToggleFavorite, this.isFavorite);
 // componente para reaproveitar titulo
   Widget _createSelectionTitle(BuildContext context, String title) {
     return Container(
@@ -104,8 +109,9 @@ class MealDetailScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.star),
+        child: Icon(isFavorite(meal) ? Icons.star : Icons.star_border),
         onPressed: () {
+          onToggleFavorite(meal);
           // Navigator.of(context) .pop(meal); //sair da tela, o pop pode passar o obj
         },
       ),
