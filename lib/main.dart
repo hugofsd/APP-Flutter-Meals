@@ -22,6 +22,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  //configurações salvar
+  Settings settings = Settings();
   // receber comidas disponiveis, recebe todas de primeira por padrão
   List<Meal> _availableMeals = DUMMY_MEALS;
 
@@ -61,7 +63,7 @@ class _MyAppState extends State<MyApp> {
         AppRoutes.CATEGORIES_MEALS: (ctx) =>
             CategoriesMealsScreen(_availableMeals),
         AppRoutes.MEAL_DETAIL: (ctx) => MealDetailScreen(),
-        AppRoutes.SETTINGS: (ctx) => SettingsScreen(_filterMeals)
+        AppRoutes.SETTINGS: (ctx) => SettingsScreen(_filterMeals, settings)
       },
     );
   }
